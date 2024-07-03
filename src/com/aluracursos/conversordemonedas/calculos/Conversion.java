@@ -24,8 +24,6 @@ public class Conversion {
 
     }
     public String elegirOpcionConversionDeMoneda(int opcion, double valorAConvertir){
-
-
         String resultado ="";
         switch (opcion){
             case 1:

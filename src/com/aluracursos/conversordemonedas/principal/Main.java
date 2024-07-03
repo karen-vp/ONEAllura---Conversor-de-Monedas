@@ -8,9 +8,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        RespuestaDeApi consulta = new RespuestaDeApi();
         Scanner lectura  = new Scanner(System.in);
+        int opcion = 0;
+        Conversion conversion = new Conversion();
         StringBuilder stringBuilder = new StringBuilder();
+
         stringBuilder.append("******************************************\n")
                 .append("Sea bienvenido/a al conversor de monedas\n")
                 .append("1) Dolar =>> Peso argentino\n")
@@ -22,8 +24,8 @@ public class Main {
                 .append("7) Salir\n")
                 .append("Elija una opcion valida: ")
                 .append("******************************************\n");
-        int opcion = 0;
-        Conversion conversion = new Conversion();
+
+
         while(opcion != 7){
             try{
                 System.out.println(stringBuilder.toString());
@@ -34,6 +36,9 @@ public class Main {
                     double valor = lectura.nextDouble();
                     lectura.nextLine();
                     System.out.println(conversion.elegirOpcionConversionDeMoneda(opcion,valor));
+                } else if (opcion>7) {
+                    System.out.println("Opcion no valida");
+
                 }else{
                     System.out.println("Finalizo ejecucion del programa!");
 
